@@ -15,5 +15,5 @@ export default defineNuxtConfig({
       }
     },
   },
-  css: ['@provetcloud/css'],
+  css: ['@provetcloud/css', '~/assets/css/reset.css',],
 })

@@ -1,0 +1,33 @@
+/* Reset margins, padding, and set box-sizing */
+html {
+    box-sizing: border-box;
+    font-size: 16px;          /* Base font size */
+    line-height: 1.5;         /* Comfortable line-height */
+    scroll-behavior: smooth;  /* Smooth in-page scrolling */
+  }
+  
+  *, *::before, *::after {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Full-height, background and font defaults */
+  body {
+    min-height: 100vh;
+    font-family: var(--n-font-family);
+    background-color: var(--n-color-background);
+    color: var(--n-color-text);
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    line-height: inherit;
+  }
+  
+  /* Make images and media responsive */
+  img, picture, video, canvas, svg {
+    max-width: 100%;
+    display: block;
+  }
+  
+  
+  
