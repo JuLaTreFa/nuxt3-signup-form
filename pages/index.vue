@@ -1,3 +1,11 @@
 <template>
-  <h1 class="n-align-center">Index page</h1>
+  <div>
+    <!-- Temporary placeholder: this route redirects to the signup page -->
+  </div>
 </template>
+
+<script setup lang="ts">
+onMounted(() => {
+  navigateTo('/signup')
+})
+</script>
