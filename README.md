@@ -41,25 +41,25 @@ http://localhost:3000
 
 ## Code Quality & Best Practices
 
-TypeScript is used throughout the project to enhance type safety.
+- TypeScript is used throughout the project to enhance type safety.
 
-Proper form validation with user-friendly error feedback.
+- Proper form validation with user-friendly error feedback.
 
-Accessibility considerations implemented
+- Accessibility considerations implemented
 
-Modular and reusable components following Vue best practices.
+- Modular and reusable components following Vue best practices.
 
-Clean and maintainable code structure.
+- Clean and maintainable code structure.
 
-Comprehensive comments and documentation where necessary.
+- Comprehensive comments and documentation where necessary.
 
 ## Next Steps / Improvements
 
-Unit and E2E testing to ensure reliability.
+- Unit and E2E testing to ensure reliability.
 
-Enhance form with password strength meter and improved email validation feedback (e.g., live email format checking or suggestion).
+- Enhance form with password strength meter and improved email validation feedback (e.g., live email format checking or suggestion).
 
-Integration with backend API for real user registration.
+- Integration with backend API for real user registration.
 
 
 
