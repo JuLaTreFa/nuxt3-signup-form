@@ -19,9 +19,7 @@
         expand
         placeholder="user@example.com"
         :error="errors.email"
-        @blur="validateField"
-        @focus="validateField"
-        @update:model="validateField"
+        @field-event="validateField"
       />
 
       <BaseInput
@@ -32,9 +30,7 @@
         expand
         placeholder="••••••••"
         :error="errors.password"
-        @blur="validateField"
-        @focus="validateField"
-        @update:model="validateField"
+        @field-event="validateField"
       />
 
       <CheckboxInput
@@ -50,6 +46,12 @@
 </template>
 
 <script setup lang="ts">
+import type { Field, FormData } from '@/types/form'
+
+const emits = defineEmits<{
+  (e: 'submitted'): void
+}>()
+
 const email = ref<string>('')
 const password = ref<string>('')
 const updates = ref<boolean>(false)
@@ -63,16 +65,20 @@ const errors = reactive<{
   password: '',
 })
 
-function validateField(field: string): void {
-  console.log(field)
-  if (field === 'email') {
-    console.log(email.value)
-    errors.email = email.value.trim() ? '' : 'Email is required'
-    console.log(errors.email)
+const form: FormData = {
+  email,
+  password,
+}
+
+function validateField(field: Field): void {
+  errors[field] = getValidationError(field, form[field].value)
+}
+
+function getValidationError(field: Field, value: string): string {
+  if (!value.trim()) {
+    return `${field[0].toUpperCase() + field.slice(1)} is required`
   }
-  if (field === 'password') {
-    errors.password = password.value.trim() ? '' : 'Password is required'
-  }
+  return ''
 }
 
 const isFormValid: ComputedRef<boolean> = computed(() => {
@@ -80,10 +86,11 @@ const isFormValid: ComputedRef<boolean> = computed(() => {
 })
 
 function handleSubmit(): void {
-  validateField('email')
-  validateField('password')
-  if (!isFormValid.value) return
+  (['email', 'password'] as const).forEach(validateField)
 
+  if (!isFormValid.value) return
+  // Show error notification
+  emits('submitted')
   // Handle successful submission
 }
 </script>

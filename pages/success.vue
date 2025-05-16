@@ -32,7 +32,7 @@
 </template>
 
 <script setup lang="ts">
-function goToSignup() {
+function goToSignup(): void {
   navigateTo('/')
 }
 </script>

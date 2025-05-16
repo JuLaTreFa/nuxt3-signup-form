@@ -3,10 +3,10 @@ export default defineNuxtConfig({
   modules: [
     '@nuxt/eslint',
   ],
-  ssr: false, devtools: { enabled: true },
+  ssr: false, // enable client-side only rendering
+  devtools: { enabled: true },
   css: ['@provetcloud/css', '~/assets/css/reset.css'],
   compatibilityDate: '2024-11-01',
-  // enable client-side only rendering
   vite: {
     vue: {
       template: {

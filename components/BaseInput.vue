@@ -1,6 +1,6 @@
 <template>
   <provet-input
-    v-bind="errorProp"
+    v-bind="inputErrorAttrs"
     v-model="model"
     :label="label"
     :expand="expand"
@@ -11,27 +11,27 @@
     :placeholder="placeholder"
     :aria-invalid="Boolean(error)"
     :aria-describedby="error ? errorId : undefined"
-    @focus="$emit('focus', inputType)"
-    @blur="$emit('blur', inputType)"
-    @input="$emit('update:model', inputType)"
+    @focus="() => $emit('field-event', name)"
+    @blur="() => $emit('field-event', name)"
+    @input="() => $emit('field-event', name)"
   >
-      <provet-button
-        slot="end"
-        v-if="type === 'password'"
-        type="button"
-        aria-label="Toggle password visibility"
-        square
-        @click="togglePasswordVisibility"
-      >
-        <provet-icon
-          v-if="!showPassword"
-          name="interface-edit-off"
-        />
-        <provet-icon
-          v-else
-          name="interface-edit-on"
-        />
-      </provet-button>
+    <provet-button
+      v-if="type === 'password'"
+      slot="end"
+      type="button"
+      aria-label="Toggle password visibility"
+      square
+      @click="togglePasswordVisibility"
+    >
+      <provet-icon
+        v-if="!passwordVisible"
+        name="interface-edit-off"
+      />
+      <provet-icon
+        v-else
+        name="interface-edit-on"
+      />
+    </provet-button>
   </provet-input>
 
   <provet-visually-hidden
@@ -44,42 +44,41 @@
 
 <script setup lang="ts">
 import type { ModelRef } from 'vue'
+import type { Field } from '@/types/form'
 
 const props = defineProps<{
   label: string
   expand?: boolean
   required?: boolean
   hideRequired?: boolean
-  name: string
+  name: Field
   type: string
   placeholder?: string
   error?: string
 }>()
 
 defineEmits<{
-  (e: 'focus', field: string): void
-  (e: 'blur', field: string): void
-  (e: 'update:model', field: string): void
+  (e: 'field-event', field: Field): void
 }>()
 
 const model: ModelRef<string> = defineModel({ default: '' })
 
-const showPassword = ref<boolean>(false)
+const passwordVisible = ref<boolean>(false)
 
 const inputType: ComputedRef<string> = computed(() => {
   if (props.type === 'password') {
-    return showPassword.value ? 'text' : 'password'
+    return passwordVisible.value ? 'text' : 'password'
   }
   return props.type
 })
 
 function togglePasswordVisibility(): void {
-  showPassword.value = !showPassword.value
+  passwordVisible.value = !passwordVisible.value
 }
 
 const errorId: ComputedRef<string> = computed(() => `${props.name}-error`)
 
-const errorProp: ComputedRef<{
+const inputErrorAttrs: ComputedRef<{
   error: string
 } | {
   error?: undefined
