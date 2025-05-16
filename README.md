@@ -13,7 +13,6 @@ This is a client-side rendered Nuxt 3 application that provides a user registrat
 - Utilizes Provet Cloud Design System components to ensure a consistent look and feel.
 - Developed with TypeScript for type safety and maintainability.
 
-
 ## Technologies Used
 
 - [Nuxt 3](https://nuxt.com/)
@@ -36,3 +35,31 @@ This is a client-side rendered Nuxt 3 application that provides a user registrat
    npm run dev
    # or
    yarn dev
+
+Then open your browser and go to:
+http://localhost:3000
+
+## Code Quality & Best Practices
+
+TypeScript is used throughout the project to enhance type safety.
+
+Proper form validation with user-friendly error feedback.
+
+Accessibility considerations implemented
+
+Modular and reusable components following Vue best practices.
+
+Clean and maintainable code structure.
+
+Comprehensive comments and documentation where necessary.
+
+## Next Steps / Improvements
+
+Unit and E2E testing to ensure reliability.
+
+Enhance form with password strength meter and improved email validation feedback (e.g., live email format checking or suggestion).
+
+Integration with backend API for real user registration.
+
+
+
