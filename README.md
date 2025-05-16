@@ -1,75 +1,65 @@
-# Nuxt Minimal Starter
+# Nuxt 3 Client-Side Sign-Up Application
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+This is a client-side rendered Nuxt 3 application that provides a user registration form for a product signup. It is built using TypeScript and integrates the [Provet Cloud Design System](https://provetcloud.design/) Web Components for UI consistency and accessibility.
 
-## Setup
+## Features
 
-Make sure to install dependencies:
+- User registration form with required **email** and **password** fields.
+- Real-time validation with error messages for empty fields.
+- Password visibility toggle for improved usability.
+- Option to subscribe to product updates and announcements.
+- Success page displayed upon successful signup.
+- Fully client-side rendered with Nuxt 3.
+- Utilizes Provet Cloud Design System components to ensure a consistent look and feel.
+- Developed with TypeScript for type safety and maintainability.
 
-```bash
-# npm
-npm install
+## Technologies Used
 
-# pnpm
-pnpm install
+- [Nuxt 3](https://nuxt.com/)
+- TypeScript
+- Provet Cloud Design System Web Components ([docs](https://provetcloud.design/web-components/#installation-1))
+- Vue 3 Composition API
+- ESLint & Prettier for code quality and formatting
 
-# yarn
-yarn install
+## Installation
 
-# bun
-bun install
-```
+1. **Clone the repository**, install dependencies, run the development server, and open in the browser:
+   ```bash
+   git clone https://github.com/yourusername/nuxt3-signup-app.git
+   cd nuxt3-signup-app
 
-## Development Server
+   npm install
+   # or
+   yarn install
 
-Start the development server on `http://localhost:3000`:
+   npm run dev
+   # or
+   yarn dev
 
-```bash
-# npm
-npm run dev
+Then open your browser and go to:
+http://localhost:3000
 
-# pnpm
-pnpm dev
+## Code Quality & Best Practices
 
-# yarn
-yarn dev
+- TypeScript is used throughout the project to enhance type safety.
 
-# bun
-bun run dev
-```
+- Proper form validation with user-friendly error feedback.
 
-## Production
+- Accessibility considerations implemented
 
-Build the application for production:
+- Modular and reusable components following Vue best practices.
 
-```bash
-# npm
-npm run build
+- Clean and maintainable code structure.
 
-# pnpm
-pnpm build
+- Comprehensive comments and documentation where necessary.
 
-# yarn
-yarn build
+## Next Steps / Improvements
 
-# bun
-bun run build
-```
+- Unit and E2E testing to ensure reliability.
 
-Locally preview production build:
+- Enhance form with password strength meter and improved email validation feedback (e.g., live email format checking or suggestion).
 
-```bash
-# npm
-npm run preview
+- Integration with backend API for real user registration.
 
-# pnpm
-pnpm preview
 
-# yarn
-yarn preview
 
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
