@@ -1,75 +1,38 @@
-# Nuxt Minimal Starter
+# Nuxt 3 Client-Side Sign-Up Application
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+This is a client-side rendered Nuxt 3 application that provides a user registration form for a product signup. It is built using TypeScript and integrates the [Provet Cloud Design System](https://provetcloud.design/) Web Components for UI consistency and accessibility.
 
-## Setup
+## Features
 
-Make sure to install dependencies:
+- User registration form with required **email** and **password** fields.
+- Real-time validation with error messages for empty fields.
+- Password visibility toggle for improved usability.
+- Option to subscribe to product updates and announcements.
+- Success page displayed upon successful signup.
+- Fully client-side rendered with Nuxt 3.
+- Utilizes Provet Cloud Design System components to ensure a consistent look and feel.
+- Developed with TypeScript for type safety and maintainability.
 
-```bash
-# npm
-npm install
 
-# pnpm
-pnpm install
+## Technologies Used
 
-# yarn
-yarn install
+- [Nuxt 3](https://nuxt.com/)
+- TypeScript
+- Provet Cloud Design System Web Components ([docs](https://provetcloud.design/web-components/#installation-1))
+- Vue 3 Composition API
+- ESLint & Prettier for code quality and formatting
 
-# bun
-bun install
-```
+## Installation
 
-## Development Server
+1. **Clone the repository**, install dependencies, run the development server, and open in the browser:
+   ```bash
+   git clone https://github.com/yourusername/nuxt3-signup-app.git
+   cd nuxt3-signup-app
 
-Start the development server on `http://localhost:3000`:
+   npm install
+   # or
+   yarn install
 
-```bash
-# npm
-npm run dev
-
-# pnpm
-pnpm dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
-```
-
-## Production
-
-Build the application for production:
-
-```bash
-# npm
-npm run build
-
-# pnpm
-pnpm build
-
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+   npm run dev
+   # or
+   yarn dev
