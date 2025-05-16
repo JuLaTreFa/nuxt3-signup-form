@@ -1,6 +1,6 @@
 // plugins/provetcloud.client.ts
 import '@provetcloud/web-components'
 
-export default defineNuxtPlugin((nuxtApp) => {
+export default defineNuxtPlugin(() => {
   // no runtime logic needed here
 })
