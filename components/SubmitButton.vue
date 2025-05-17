@@ -1,5 +1,6 @@
 <template>
   <provet-button
+    :data-testid="name"
     type="submit"
     expand
     variant="primary"
@@ -10,5 +11,5 @@
 </template>
 
 <script setup lang="ts">
-defineProps<{ disabled?: boolean }>()
+defineProps<{ disabled?: boolean, name?: string }>()
 </script>

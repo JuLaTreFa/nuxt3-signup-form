@@ -3,6 +3,7 @@
     size="s"
     :label="label"
     :value="model"
+    :data-testid="name"
   />
 </template>
 
@@ -11,6 +12,7 @@ import type { ModelRef } from 'vue'
 
 defineProps<{
   label: string
+  name: string
 }>()
 
 const model: ModelRef<boolean> = defineModel({ default: false })
