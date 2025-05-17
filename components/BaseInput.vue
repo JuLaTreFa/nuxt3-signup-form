@@ -11,6 +11,7 @@
     :placeholder="placeholder"
     :aria-invalid="Boolean(error)"
     :aria-describedby="error ? errorId : undefined"
+    :data-testid="name"
     @focus="() => $emit('field-event', name)"
     @blur="() => $emit('field-event', name)"
     @input="() => $emit('field-event', name)"
@@ -19,7 +20,7 @@
       v-if="type === 'password'"
       slot="end"
       type="button"
-      aria-label="Toggle password visibility"
+      data-testid="password-toggle-btn"
       square
       @click="togglePasswordVisibility"
     >

@@ -35,10 +35,14 @@
 
       <CheckboxInput
         v-model="updates"
+        name="updates"
         label="Receive occasional product updates and announcements"
       />
 
-      <SubmitButton :disabled="!isFormValid">
+      <SubmitButton
+        :disabled="!isFormValid"
+        data-testid="signup-button"
+      >
         Sign Up
       </SubmitButton>
     </provet-stack>
